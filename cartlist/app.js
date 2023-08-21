@@ -52,3 +52,16 @@ function deleteCart(name){
   renderDom();
 }
 
+function cartotal(){
+var cartItem = document.querySelectorAll("tbody tr") 
+console.log(cartItem);
+var totalC = 0
+for (var i=0; i < cartItem.length; i++){
+  var inputValue = cartItem [i].querySelector("input").value
+  var productPrice = cartItem [i].querySelector(".spanPrice span").innerHTML
+  var totalX = inputValue* productPrice*1000
+  totalC = totalC + totalX
+}
+var carttotalA = document.querySelector(".total-price span")
+carttotalA.innerHTML= totalC.toLocaleString('de-DE')
+}  
